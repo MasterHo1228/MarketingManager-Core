@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmployeesTable extends Migration
+class CreateCellphoneModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateEmployeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('cellphone_models',function (Blueprint $table){
             $table->increments('id');
             $table->string('name');
-            $table->enum('gender', ['male', 'female'])->default('male');
-            $table->string('email')->unique();
-            $table->string('password', 30);
-            $table->rememberToken();
+            $table->decimal('base_price');
+            $table->decimal('sale_price');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateEmployeesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('cellphone_models');
     }
 }
