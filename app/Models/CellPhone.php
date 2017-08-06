@@ -13,6 +13,10 @@ class CellPhone extends Model {
     ];
 
     // Relationships
+    public function warehouse(){
+        return $this->belongsTo(Warehouse::class);
+    }
+
     public function cellphone_models(){
         return $this->hasMany(CellPhoneModel::class);
     }

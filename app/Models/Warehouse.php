@@ -2,11 +2,9 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Employee extends Model {
+class Warehouse extends Model {
 
-    protected $table = 'employees';
-
-    protected $fillable = ['name','gender','email'];
+    protected $fillable = [];
 
     protected $dates = [];
 
@@ -14,14 +12,17 @@ class Employee extends Model {
         // Validation rules
     ];
 
-    protected $hidden = ['password', 'remember_token'];
-
     // Relationships
     public function store(){
         return $this->belongsTo(Store::class);
     }
 
-    public function cellphones(){
+    //TODO Create a warehouse keeper Model.
+//    public function keeper(){
+//        return $this->hasOne(keeper::class);
+//    }
+
+    public function cellphone(){
         return $this->hasMany(CellPhone::class);
     }
 }
