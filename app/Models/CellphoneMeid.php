@@ -2,6 +2,13 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\CellphoneMeid
+ *
+ * @property-read \App\Models\CellPhone $Cellphone
+ * @property-read \App\Models\CellPhoneModel $CellphoneModel
+ * @mixin \Eloquent
+ */
 class CellphoneMeid extends Model {
 
     protected $fillable = [];

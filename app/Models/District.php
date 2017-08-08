@@ -3,12 +3,12 @@
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Models\CellPhoneModel
+ * App\Models\District
  *
- * @property-read \App\Models\CellPhone $cellphone
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Store[] $store
  * @mixin \Eloquent
  */
-class CellPhoneModel extends Model {
+class District extends Model {
 
     protected $fillable = [];
 
@@ -19,7 +19,7 @@ class CellPhoneModel extends Model {
     ];
 
     // Relationships
-    public function cellphone(){
-        return $this->belongsTo(CellPhone::class);
+    public function store(){
+        return $this->hasMany(Store::class);
     }
 }
